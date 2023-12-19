@@ -1,0 +1,47 @@
+/*======================================*/
+/*HEADER*/
+/*======================================*/
+
+/*PROPIEDADES DEL HEADER*/
+#header {
+    height: 70px;
+    width: 100%;
+    background-color: rgba(241, 255, 255, 0.886);
+    backdrop-filter: blur(3px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+/*PROPIEDADES DEL NAV*/
+#navBar {
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#navBar img {
+    width: 60px;
+}
+
+#navBar ul li a {
+    font-size: 20px;
+    margin-left: 20px;
+    color: black;
+    transition: .5s;
+}
+
+#navBar ul {
+    display: flex;
+    height: 100%;
+    align-items: flex-end;  
+}
+
+#navBar ul a:hover {
+    color: #4444dd;
+    font-size: 25px;
+    transition: .5s;
+}
+#navBar ul a:active {
+    color: red;
+}

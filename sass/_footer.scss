@@ -1,0 +1,78 @@
+/*======================================*/
+/*ESTILOS FOOTER*/
+/*======================================*/
+#footer {
+    margin-top: auto;
+    width: 100%;
+    height: auto;
+    background-color: #e6eefa;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 80px;
+    /*ARTICULO CONTENEDOR DE LOGO*/
+    .footerLogo {
+        width: 140px;
+        height: 140px;
+        filter: drop-shadow(30px 10px 4px #4444dd);
+    }
+
+    /*ARTICULO CONTENEDOR DE LINKS*/
+    .footer__links {
+        ul {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            li a {
+                color: black;
+                font-size: 20px;
+                margin-top: 7px;
+                &:hover {
+                    color: red;
+                }
+            }
+        }
+    } 
+    /*ARTICULO CONTENEDOR DE REDES*/
+    .footerRedes {
+        border: 1px dotted black;
+        border-radius: 100%;
+        padding: 4px;
+        width: 50px;
+        margin: 5px;
+    }
+}
+
+
+
+/*======================================*/
+/*ESTILOS FOOTER: SISTEMA RESPONSIVO*/
+/*======================================*/
+@media (max-width: 768px) {
+    
+    .footerLogo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .footerRedes {
+        width: 40px;
+    }
+
+    .footer__links ul li a {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    #footer {
+        padding-top: 10px;
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+
+}

@@ -1,19 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Roboto:wght@100;300;400;500;700&display=swap');
-/*RESET CSS*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Love Ya Like A Sister', cursive;
-    /* border: 1px solid blue; */
-}
 
-a , li {
-    display: inline-block;
-    font-style: none;
-    list-style: none;
-    text-decoration: none;
-}
+
+@import "footer";
+@import "headerNav";
+@import "resetCSS";
+@import "imagenes/main";
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Roboto:wght@100;300;400;500;700&display=swap');
+
 
 /*======================================*/
 /*INDEX*/
@@ -31,53 +27,7 @@ body {
     text-align: center;
     padding-bottom: 20px;
 }
-/*======================================*/
-/*HEADER*/
-/*======================================*/
 
-/*PROPIEDADES DEL HEADER*/
-#header {
-    height: 70px;
-    width: 100%;
-    background-color: rgba(241, 255, 255, 0.886);
-    backdrop-filter: blur(3px);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-/*PROPIEDADES DEL NAV*/
-#navBar {
-    height: 70px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-#navBar img {
-    width: 60px;
-}
-
-#navBar ul li a {
-    font-size: 20px;
-    margin-left: 20px;
-    color: black;
-    transition: .5s;
-}
-
-#navBar ul {
-    display: flex;
-    height: 100%;
-    align-items: flex-end;  
-}
-
-#navBar ul a:hover {
-    color: #4444dd;
-    font-size: 25px;
-    transition: .5s;
-}
-#navBar ul a:active {
-    color: red;
-}
 
 /*======================================*/
 /*SECCION BANNER*/
@@ -150,7 +100,7 @@ body {
 /*SECTION SERVICIOS*/
 /*======================================*/
 #servicios {
-    background-color: #d9d9d9;
+    background-image: linear-gradient(to bottom, blue, rgba(83, 163, 67, 0.63));
     padding: 20px 0;
     display: flex;
     justify-content: center;
@@ -162,6 +112,130 @@ body {
     justify-content: space-around;
     margin-top: 30px;
 }
+
+/*======================================*/
+/*TRANSFORM= TRANSLATE*/
+/*SE PUEDEN LLAMAR INDIVIDUALMENTE A CADA EJE*/
+/*======================================*/
+.servicios__pasajes {
+    transition: 1s;
+}
+.servicios__pasajes:active {
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.616);
+    transition: 1s;
+
+    /*PRIMER VALOR EJE X Y SEGUNDO VALOR EJE Y:
+    
+    VALORES POSITIVOS= MUEVEN A EL ELEMENTO (DERECHA/ABAJO)
+    VALORES NEGATIVOS= MUEVEN AL ELEMENTO (IZQUIERDA/ARRIBA)
+
+    El X positivo es de izq a der y el Y positivo es de arriba a abajo
+    */
+                        /*X      Y*/
+    transform: translate(-10px, -10px);
+}
+/*======================================*/
+/*TRANSFORM= ROTATE*/
+/*======================================*/
+.servicios__precios {
+    transition: 1s;
+}
+.servicios__precios:active {
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.616);
+    transition: 1s;
+
+    transform: rotate(360deg , 360deg);
+}
+
+
+/*======================================*/
+/*TRANSFORM= SCALE*/
+/*======================================*/
+.servicios__hoteles {
+    transition: 1s;
+    transform: scale(.8 , .8);
+}
+.servicios__hoteles img {
+    transition: 1s;
+}
+.servicios__hoteles img:hover {
+    filter: drop-shadow(5px 5px 4px #111111);
+    transition: 1s;
+    /*PRIMER VALOR EJE X (HORIZONTAL) Y SEGUNDO VALOR EJE Y (VERTICAL):
+    
+    VALORES ENTRE/MENORES  1/0 (ACHICAN)
+    */
+    
+    transform: scale(1.2 , 1.2);
+}
+
+/*======================================*/
+/*TRANSFORM= SKEW*/
+/*======================================*/
+.servicios__herramientas {
+    transition: 1s;
+    transform: scale(.8 , .8);
+}
+.servicios__herramientas:hover {
+    filter: drop-shadow(5px 5px 4px #111111);
+    transition: 1s;
+    /*PRIMER VALOR EJE X (HORIZONTAL) Y SEGUNDO VALOR EJE Y (VERTICAL):
+    
+    VALORES ENTRE/MENORES  1/0 (ACHICAN)
+    */
+    
+    transform: skewY(40deg);
+}
+/*======================================*/
+/*ANIMACIÓN*/
+/*======================================*/
+.servicios__herramientas {
+    -webkit-animation: rotate-diagonal-1 1s linear 1s infinite both;
+	        animation: rotate-diagonal-1 1s linear 1s infinite both;
+}
+@-webkit-keyframes rotate-diagonal-1 {
+    0% {
+      -webkit-transform: rotate3d(1, 1, 0, 0deg);
+              transform: rotate3d(1, 1, 0, 0deg);
+    }
+    50% {
+      -webkit-transform: rotate3d(1, 1, 0, -180deg);
+              transform: rotate3d(1, 1, 0, -180deg);
+    }
+    100% {
+      -webkit-transform: rotate3d(1, 1, 0, -360deg);
+              transform: rotate3d(1, 1, 0, -360deg);
+    }
+  }
+  @keyframes rotate-diagonal-1 {
+    0% {
+      -webkit-transform: rotate3d(1, 1, 0, 0deg);
+              transform: rotate3d(1, 1, 0, 0deg);
+    }
+    50% {
+      -webkit-transform: rotate3d(1, 1, 0, -180deg);
+              transform: rotate3d(1, 1, 0, -180deg);
+    }
+    100% {
+      -webkit-transform: rotate3d(1, 1, 0, -360deg);
+              transform: rotate3d(1, 1, 0, -360deg);
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #servicios .serviciosBox article {
     width: 150px;
     height: 150px;
@@ -242,50 +316,7 @@ form {
     background-color: blueviolet;
 }
 
-/*======================================*/
-/*PAGINA IMÁGENES*/
-/*======================================*/
-#containerGridBariloche {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 300px);
-    grid-template-areas: 
-    /*  COL1             COL2          COL3*/
-    "imgBariloche-1 imgBariloche-2 imgBariloche-4" /*FILA 1*/
-    "imgBariloche-3 imgBariloche-3 imgBariloche-4" /*FILA 2*/
-    ;
-    gap: 10px;
-}
-/*AREAS PARA LAS IMG BARILOCHE*/
-.imgBariloche-1 {
-    grid-area: imgBariloche-1;
-}
-.imgBariloche-2 {
-    grid-area: imgBariloche-2;
-}
-.imgBariloche-3 {
-    grid-area: imgBariloche-3;
-}
-.imgBariloche-4 {
-    grid-area: imgBariloche-4;
-}
-/*IMAGENES DE FONDO PARA BARILOCHE*/
-.imgBariloche-1,
-.imgBariloche-2 {
-    background-image: url(../images/banner.jpg);
-    background-size: cover;
-}
-.imgBariloche-3 {
-    background-image: url(../images/imagenes/Calafate-peritoMoreno.jpg);
-    background-position: center;
-}
-.imgBariloche-4 {
-    background-image: url(../images/imagenes/bariloche.webp);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-}
+
 
 
 
@@ -387,79 +418,3 @@ form {
         max-width: 80%;
     }
 }
-
-
-
-
-/*======================================*/
-/*ESTILOS FOOTER*/
-/*======================================*/
-#footer {
-    margin-top: auto;
-    width: 100%;
-    height: auto;
-    background-color: #e6eefa;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 80px;
-}
-
-/*ARTICULO CONTENEDOR DE LOGO*/
-.footerLogo {
-    width: 140px;
-    height: 140px;
-}
-.footerLogo {
-    filter: drop-shadow(30px 10px 4px #4444dd);
-}
-
-/*ARTICULO CONTENEDOR DE LINKS*/
-.footer__links ul {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-.footer__links ul li a {
-    color: black;
-    font-size: 20px;
-    margin-top: 7px;
-}
-
-/*ARTICULO CONTENEDOR DE REDES*/
-.footerRedes {
-    border: 1px dotted black;
-    border-radius: 100%;
-    padding: 4px;
-    width: 50px;
-    margin: 5px;
-}
-
-/*======================================*/
-/*ESTILOS FOOTER: SISTEMA RESPONSIVO*/
-/*======================================*/
-@media (max-width: 768px) {
-    
-    .footerLogo {
-        width: 100px;
-        height: 100px;
-    }
-
-    .footerRedes {
-        width: 40px;
-    }
-
-    .footer__links ul li a {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 480px) {
-    #footer {
-        padding-top: 10px;
-        flex-direction: column;
-        height: auto;
-        gap: 10px;
-    }
-}
-
